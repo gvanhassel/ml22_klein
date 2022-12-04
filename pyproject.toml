@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "poetry add pandas"
+version = "0.1.0"
+description = ""
+authors = ["gvanhassel <gvanhassel@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+pandas = "^1.5.2"
+pathlib = "^1.0.1"
+torch = "1.12.1"
+ipykernel = "^6.17.1"
+gin = "^0.1.6"
+gin-config = "^0.5.0"
+requests = "^2.28.1"
+tensorflow = "^2.11.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
