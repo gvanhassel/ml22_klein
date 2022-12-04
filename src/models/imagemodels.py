@@ -25,7 +25,7 @@ class NeuralNetwork(nn.Module):
 @gin.configurable
 class CNN(nn.Module):
     def __init__(
-        self, num_classes: int, kernel_size: int, filter1: int, filter2: int
+        self, num_classes: int, kernel_size: int, filter1: int, filter2: int, unit1: int, unit2: int
     ) -> None:
         super().__init__()
 
@@ -43,11 +43,11 @@ class CNN(nn.Module):
 
         self.dense = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(128, 64),
+            nn.Linear(128, unit1),
             nn.ReLU(),
-            nn.Linear(64, 32),
+            nn.Linear(unit1, unit2),
             nn.ReLU(),
-            nn.Linear(32, num_classes),
+            nn.Linear(unit2, num_classes),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
