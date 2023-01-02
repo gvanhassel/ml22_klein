@@ -1,9 +1,0 @@
-# Parameters for get_MNIST:
-# ==============================================================================
-# None.
-
-# Parameters for trainloop:
-# ==============================================================================
-trainloop.factor = 0.9
-trainloop.patience = 10
-trainloop.tunewriter = False
