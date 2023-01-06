@@ -74,11 +74,12 @@ class CNN_150(nn.Module):
             nn.MaxPool2d(kernel_size=2),
             nn.Conv2d(filter2, 32, kernel_size=2, stride=1, padding=1),
             nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2),
         )
 
         self.dense = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(800, unit1),
+            nn.Linear(128, unit1),
             nn.ReLU(),
             nn.Linear(unit1, unit1),
             nn.ReLU(),
