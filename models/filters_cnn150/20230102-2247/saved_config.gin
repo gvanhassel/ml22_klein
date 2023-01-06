@@ -1,0 +1,42 @@
+import gin.torch.external_configurables
+
+# Parameters for Adam:
+# ==============================================================================
+Adam.amsgrad = False
+Adam.betas = (0.9, 0.999)
+Adam.capturable = False
+Adam.differentiable = False
+Adam.eps = 1e-08
+Adam.foreach = None
+Adam.fused = False
+Adam.maximize = False
+Adam.weight_decay = 0
+
+# Parameters for CNN_150:
+# ==============================================================================
+CNN_150.filter1 = 128
+CNN_150.filter2 = 64
+CNN_150.kernel_size = 2
+CNN_150.num_classes = 10
+CNN_150.unit1 = 128
+CNN_150.unit2 = 128
+
+# Parameters for CrossEntropyLoss:
+# ==============================================================================
+CrossEntropyLoss.ignore_index = -100
+CrossEntropyLoss.label_smoothing = 0.0
+CrossEntropyLoss.reduce = None
+CrossEntropyLoss.reduction = 'mean'
+CrossEntropyLoss.size_average = None
+CrossEntropyLoss.weight = None
+
+# Parameters for trainloop:
+# ==============================================================================
+trainloop.epochs = 10
+trainloop.factor = 0.9
+trainloop.learning_rate = 0.001
+trainloop.log_dir = '../../models/filters_cnn150/'
+trainloop.loss_fn = @CrossEntropyLoss()
+trainloop.optimizer = @Adam
+trainloop.patience = 10
+trainloop.tunewriter = False
